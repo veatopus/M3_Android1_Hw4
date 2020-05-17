@@ -12,7 +12,8 @@
         android:layout_height="60dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/profle_of_student"/>
+        android:background="@drawable/profle_of_student"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/vh_student_full_name"
@@ -24,7 +25,7 @@
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:textColor="@android:color/black"
-        android:text="Supataev Ruslan"/>
+        android:text="@string/example_name"/>
 
     <TextView
         android:id="@+id/vh_student_phone_number"
@@ -33,7 +34,7 @@
         app:layout_constraintLeft_toLeftOf="@id/vh_student_full_name"
         app:layout_constraintTop_toBottomOf="@id/vh_student_full_name"
         android:textColor="@android:color/black"
-        android:text="+996 557 071 204"/>
+        android:text="@string/example_numberPhone"/>
 
 
     <TextView
@@ -44,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="#6066A5"
-        android:text="21"
+        android:text="@string/example_group"
         android:textSize="32sp"
         android:textAlignment="center"
         android:paddingTop="5dp"/>

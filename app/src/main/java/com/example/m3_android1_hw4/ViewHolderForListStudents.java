@@ -6,26 +6,28 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ViewHolderForListStudents extends RecyclerView.ViewHolder {
+class ViewHolderForListStudents extends RecyclerView.ViewHolder {
     private TextView fullName;
     private TextView phoneNumber;
     private TextView group;
 
-    public ViewHolderForListStudents(@NonNull View itemView) {
+    ViewHolderForListStudents(@NonNull View itemView) {
         super(itemView);
         fullName = itemView.findViewById(R.id.vh_student_full_name);
         phoneNumber = itemView.findViewById(R.id.vh_student_phone_number);
         group = itemView.findViewById(R.id.vh_student_group);
     }
 
-    public void onBind(Student student){
+    void onBind(Student student){
         putStudentInXmlFile(student);
     }
 
-    private boolean putStudentInXmlFile(@NonNull Student student){
+    private void putStudentInXmlFile(@NonNull Student student){
         fullName.setText(student.getFullName());
         phoneNumber.setText(student.getPhoneNumber());
         group.setText(student.getGroup());
-        return fullName.getText() != null && phoneNumber.getText() != null && group.getText() != null;
+        if (fullName.getText() != null && phoneNumber.getText() != null) {
+            group.getText();
+        }
     }
 }

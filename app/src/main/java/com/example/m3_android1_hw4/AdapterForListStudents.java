@@ -12,8 +12,7 @@ import java.util.Collections;
 public class AdapterForListStudents extends RecyclerView.Adapter<ViewHolderForListStudents> {
     private ArrayList<Student> listStudents = new ArrayList<>();
 
-    public int putElement(@NonNull Student student){
-        int numberOfStudents = listStudents.size();
+    int putElement(@NonNull Student student){
         listStudents.add(student);
         notifyDataSetChanged();
         Collections.sort(listStudents);

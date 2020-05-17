@@ -7,34 +7,22 @@ public class Student implements Serializable, Comparable<Student>{
     private String phoneNumber;
     private String group;
 
-    public Student(String fullName, String phoneNumber, String group) {
+    Student(String fullName, String phoneNumber, String group) {
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
         this.group = group;
     }
 
-    public String getFullName() {
+    String getFullName() {
         return fullName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getPhoneNumber() {
+    String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getGroup() {
+    String getGroup() {
         return group;
-    }
-
-    public void setGroup(String group) {
-        this.group = group;
     }
 
     @Override

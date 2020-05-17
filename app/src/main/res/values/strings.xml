@@ -3,4 +3,8 @@
     <string name="enter_student_name">enter student name:</string>
     <string name="enter_student_phone_number">enter student phone num:</string>
     <string name="enter_student_group">enter student group:</string>
+    <string name="example_name">Supataev Ruslan</string>
+    <string name="example_numberPhone">+996 557 071 204</string>
+    <string name="example_group">21</string>
+    <string name="todo">TODO</string>
 </resources>

@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     public static final String PUT_EXTRA_MAIN_ACTIVITY = "key for put extra MainActivity";
     private static final int REQUEST_CODE_FOR_ACTIVITY_FOR_ADD_STUDENTS = 20;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +44,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == REQUEST_CODE_FOR_ACTIVITY_FOR_ADD_STUDENTS){
-            assert data != null;
-            int position = adapterForListStudents.putElement((Student) Objects.requireNonNull(data.getSerializableExtra(PUT_EXTRA_MAIN_ACTIVITY)));
-            recyclerView.scrollToPosition(position);
+        if (requestCode == REQUEST_CODE_FOR_ACTIVITY_FOR_ADD_STUDENTS) {
+            if (resultCode == RESULT_OK) {
+                assert data != null;
+                int position = adapterForListStudents.putElement((Student) Objects.requireNonNull(data.getSerializableExtra(PUT_EXTRA_MAIN_ACTIVITY)));
+                recyclerView.scrollToPosition(position);
+            }
         }
     }
 }
