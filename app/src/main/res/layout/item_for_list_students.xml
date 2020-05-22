@@ -13,7 +13,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/profle_of_student"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo"/>
 
     <TextView
         android:id="@+id/vh_student_full_name"

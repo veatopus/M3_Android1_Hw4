@@ -17,10 +17,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="126dp" />
+        tools:layout_editor_absoluteY="126dp"
+        android:contentDescription="@string/todo" />
 
-    <EditText
-        android:id="@+id/addName"
+    <TextView
+        android:id="@+id/nameStudent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -29,45 +30,62 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginBottom="60dp"
-        android:hint="@string/enter_student_name"/>
+        android:text="@string/example_name"
+        android:textSize="20sp"/>
 
 
 
-    <EditText
-        android:id="@+id/addNumberOfPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        android:layout_marginStart="50dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/addName"
-        android:layout_marginTop="60dp"
-        android:hint="@string/enter_student_phone_number"/>
-
-
-    <EditText
-        android:id="@+id/addGroup"
+    <TextView
+        android:id="@+id/numberOfPhoneStudent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginStart="50dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/addNumberOfPhone"
+        app:layout_constraintTop_toTopOf="@+id/nameStudent"
         android:layout_marginTop="60dp"
-        android:hint="@string/enter_student_group"
-        android:inputType="phone"/>
+        android:text="@string/example_numberPhone"
+        android:textSize="20sp"/>
+
+
+    <TextView
+        android:id="@+id/groupStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginStart="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/numberOfPhoneStudent"
+        android:layout_marginTop="60dp"
+        android:text="@string/example_group"
+        android:textSize="20sp"/>
 
     <Button
-        android:id="@+id/saveStudent"
+        android:id="@+id/btn_back"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="32dp"
+        android:background="@drawable/icon_back"/>
+
+    <Button
+    android:id="@+id/btn_editing"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    app:layout_constraintRight_toLeftOf="@id/btn_back"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_margin="32dp"
+    android:background="@drawable/icon_editing"/>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintRight_toLeftOf="@id/btn_editing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="32dp"
         android:background="@drawable/icon_save"/>
-
-
 
 
 

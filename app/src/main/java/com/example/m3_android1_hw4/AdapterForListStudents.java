@@ -10,12 +10,25 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class AdapterForListStudents extends RecyclerView.Adapter<ViewHolderForListStudents> {
-    private ArrayList<Student> listStudents = new ArrayList<>();
+    private static ArrayList<Student> listStudents = new ArrayList<>();
+    IStudentClick listener;
+
+    void studentReplacement(@NonNull Student student){
+        for (int i = 0; i < listStudents.size(); i++) {
+            if (student.getId() == listStudents.get(i).getId()){
+                listStudents.set(i, student);
+                Collections.sort(listStudents);
+                notifyDataSetChanged();
+                break;
+            }
+        }
+    }
 
     int putElement(@NonNull Student student){
+        student.setID(listStudents.size());
         listStudents.add(student);
-        notifyDataSetChanged();
         Collections.sort(listStudents);
+        notifyDataSetChanged();
         return listStudents.size()-1;
     }
 
@@ -23,7 +36,9 @@ public class AdapterForListStudents extends RecyclerView.Adapter<ViewHolderForLi
     @Override
     public ViewHolderForListStudents onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        return new ViewHolderForListStudents(inflater.inflate(R.layout.item_for_list_students, parent, false));
+        ViewHolderForListStudents v = new ViewHolderForListStudents(inflater.inflate(R.layout.item_for_list_students, parent, false));
+        v.listener = listener;
+        return v;
     }
 
     @Override

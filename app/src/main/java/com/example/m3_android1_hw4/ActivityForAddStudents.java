@@ -23,12 +23,12 @@ public class ActivityForAddStudents extends AppCompatActivity {
         addPhone = findViewById(R.id.addNumberOfPhone);
         addGroup = findViewById(R.id.addGroup);
         saveStudent = findViewById(R.id.saveStudent);
-        final Intent intent = getIntent();
-        if (intent == null)
-            finish();
+
+
         saveStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final Intent intent = getIntent();
                 if (!addName.getText().toString().equals("") && !addPhone.getText().toString().equals("") && !addGroup.getText().toString().equals("")) {
                     Student student = new Student(addName.getText().toString(), addPhone.getText().toString(), addGroup.getText().toString());
                     assert intent != null;
