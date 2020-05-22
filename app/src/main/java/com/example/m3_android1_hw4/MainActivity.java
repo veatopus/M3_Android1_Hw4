@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements IStudentClick{
     RecyclerView recyclerView;
     public static final String PUT_EXTRA_MAIN_ACTIVITY = "key_for_put_extra_MainActivity";
     private static final int REQUEST_CODE_FOR_ACTIVITY_ADD_STUDENTS = 20;
-    private static final int REQUEST_CODE_FOR_ACTIVITY_VIEWING_STUDENT_INFORMATION = 20;
+    private static final int REQUEST_CODE_FOR_ACTIVITY_VIEWING_STUDENT_INFORMATION = 25;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements IStudentClick{
             }
         } else if (requestCode == REQUEST_CODE_FOR_ACTIVITY_VIEWING_STUDENT_INFORMATION){
             if (resultCode == RESULT_OK){
+                assert data != null;
                 adapterForListStudents.studentReplacement((Student) Objects.requireNonNull(data.getSerializableExtra(PUT_EXTRA_MAIN_ACTIVITY)));
             }
         }
