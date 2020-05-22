@@ -50,9 +50,7 @@ public class MainActivity extends AppCompatActivity implements IStudentClick{
                 int position = adapterForListStudents.putElement((Student) Objects.requireNonNull(data.getSerializableExtra(PUT_EXTRA_MAIN_ACTIVITY)));
                 recyclerView.scrollToPosition(position);
             }
-        }
-
-        if (requestCode == REQUEST_CODE_FOR_ACTIVITY_VIEWING_STUDENT_INFORMATION){
+        } else if (requestCode == REQUEST_CODE_FOR_ACTIVITY_VIEWING_STUDENT_INFORMATION){
             if (resultCode == RESULT_OK){
                 adapterForListStudents.studentReplacement((Student) Objects.requireNonNull(data.getSerializableExtra(PUT_EXTRA_MAIN_ACTIVITY)));
             }

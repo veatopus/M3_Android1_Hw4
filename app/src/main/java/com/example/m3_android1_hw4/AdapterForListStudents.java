@@ -14,8 +14,9 @@ public class AdapterForListStudents extends RecyclerView.Adapter<ViewHolderForLi
     IStudentClick listener;
 
     void studentReplacement(@NonNull Student student){
-        for (int i = 0; i < listStudents.size(); i++) {
+        for (int i = 0; i < listStudents.size()-1; i++) {
             if (student.getId() == listStudents.get(i).getId()){
+                listStudents.remove(student);
                 listStudents.set(i, student);
                 Collections.sort(listStudents);
                 notifyDataSetChanged();
