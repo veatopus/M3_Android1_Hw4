@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements IStudentClick{
         } else if (requestCode == REQUEST_CODE_FOR_ACTIVITY_VIEWING_STUDENT_INFORMATION){
             if (resultCode == RESULT_OK){
                 assert data != null;
+                Log.d("ololo", "onActivityResult: activ");
                 adapterForListStudents.studentReplacement((Student) Objects.requireNonNull(data.getSerializableExtra(PUT_EXTRA_MAIN_ACTIVITY)));
             }
         }

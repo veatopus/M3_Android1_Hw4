@@ -1,5 +1,6 @@
 package com.example.m3_android1_hw4;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -16,10 +17,11 @@ public class AdapterForListStudents extends RecyclerView.Adapter<ViewHolderForLi
     void studentReplacement(@NonNull Student student){
         for (int i = 0; i < listStudents.size()-1; i++) {
             if (student.getId() == listStudents.get(i).getId()){
-                listStudents.remove(listStudents.get(i));
-                listStudents.add(student);
+                listStudents.remove(i);
+                listStudents.add(i, student);
                 Collections.sort(listStudents);
                 notifyDataSetChanged();
+                Log.d("ololo", "studentReplacement: activ "+ student.getId() + " " + listStudents.get(i).getId());
                 break;
             }
         }
