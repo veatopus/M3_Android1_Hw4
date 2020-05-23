@@ -1,3 +1,4 @@
+
 package com.example.m3_android1_hw4;
 
 import android.util.Log;
@@ -15,8 +16,10 @@ public class AdapterForListStudents extends RecyclerView.Adapter<ViewHolderForLi
     IStudentClick listener;
 
     void studentReplacement(@NonNull Student student){
-        for (int i = 0; i < listStudents.size()-1; i++) {
+        for (int i = 0; i <= listStudents.size()-1; i++) {
+            Log.d("ololo", "studentReplacement: poisk " + i + " " + listStudents.get(i).getId());
             if (student.getId() == listStudents.get(i).getId()){
+                Log.d("ololo", "studentReplacement: poisk zavershon" + i + " " + listStudents.get(i).getId());
                 listStudents.remove(i);
                 listStudents.add(i, student);
                 Collections.sort(listStudents);
@@ -28,7 +31,7 @@ public class AdapterForListStudents extends RecyclerView.Adapter<ViewHolderForLi
     }
 
     int putElement(@NonNull Student student){
-        student.setID(listStudents.size());
+        student.setID(student.hashCode());
         listStudents.add(student);
         Collections.sort(listStudents);
         notifyDataSetChanged();

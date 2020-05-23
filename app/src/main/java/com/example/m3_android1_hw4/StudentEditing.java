@@ -30,7 +30,7 @@ public class StudentEditing extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        Student s = (Student) intent.getSerializableExtra(PUT_EXTRA_FOR_STUDENT_STUDENT_EDITING);
+        final Student s = (Student) intent.getSerializableExtra(PUT_EXTRA_FOR_STUDENT_STUDENT_EDITING);
         assert s != null;
         addName.setText(s.getFullName());
         addPhone.setText(s.getPhoneNumber());
@@ -49,6 +49,7 @@ public class StudentEditing extends AppCompatActivity {
                 final Intent intent = getIntent();
                 if (!addName.getText().toString().equals("") && !addPhone.getText().toString().equals("") && !addGroup.getText().toString().equals("")) {
                     Student student = new Student(addName.getText().toString(), addPhone.getText().toString(), addGroup.getText().toString());
+                    student.setID(s.getId());
                     assert intent != null;
                     intent.putExtra(ActivityForViewingStudentInformation.PUT_EXTRA_FOR_STUDENT_ACTIVITY_VIEWING_STUDENT_INFORMATION, student);
                     setResult(RESULT_OK, intent);

@@ -80,6 +80,7 @@ public class ActivityForViewingStudentInformation extends AppCompatActivity {
             public void onClick(View v) {
                 if (!name.getText().toString().equals("") && !numberPhone.getText().toString().equals("") && !group.getText().toString().equals("")) {
                     Student student = new Student(name.getText().toString(), numberPhone.getText().toString(), group.getText().toString());
+                    student.setID(s.getId());
                     assert intent != null;
                     intent.putExtra(MainActivity.PUT_EXTRA_MAIN_ACTIVITY, student);
                     setResult(RESULT_OK, intent);
@@ -98,7 +99,7 @@ public class ActivityForViewingStudentInformation extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_FOR_STUDENT_EDITING){
             if (resultCode == RESULT_OK){
                 assert data != null;
-                Student s = (Student) data.getSerializableExtra(PUT_EXTRA_FOR_STUDENT_ACTIVITY_VIEWING_STUDENT_INFORMATION);
+                s = (Student) data.getSerializableExtra(PUT_EXTRA_FOR_STUDENT_ACTIVITY_VIEWING_STUDENT_INFORMATION);
                 assert s != null;
                 fillingInInformation(s);
             }

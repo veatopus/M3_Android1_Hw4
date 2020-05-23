@@ -12,6 +12,7 @@ class ViewHolderForListStudents extends RecyclerView.ViewHolder {
     private TextView phoneNumber;
     private TextView group;
     IStudentClick listener;
+    private Student s;
 
     ViewHolderForListStudents(@NonNull View itemView) {
         super(itemView);
@@ -22,14 +23,18 @@ class ViewHolderForListStudents extends RecyclerView.ViewHolder {
         icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!fullName.getText().toString().equals("") && !phoneNumber.getText().toString().equals("") && !group.getText().toString().equals(""))
-                listener.onStudentClick(new Student(fullName.getText().toString(), phoneNumber.getText().toString(), group.getText().toString()));
+                if (!fullName.getText().toString().equals("") && !phoneNumber.getText().toString().equals("") && !group.getText().toString().equals("")){
+                    Student student = new Student(fullName.getText().toString(), phoneNumber.getText().toString(), group.getText().toString());
+                    student.setID(s.getId());
+                    listener.onStudentClick(s);
+            }
             }
         });
 
     }
 
     void onBind(@NonNull Student student){
+        s = student;
         putStudentInXmlFile(student);
     }
 
