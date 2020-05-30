@@ -42,8 +42,9 @@ class ViewHolderForListStudents extends RecyclerView.ViewHolder {
         fullName.setText(student.getFullName());
         phoneNumber.setText(student.getPhoneNumber());
         group.setText(student.getGroup());
-        if (fullName.getText() != null && phoneNumber.getText() != null) {
+
+        /*if (fullName.getText() != null && phoneNumber.getText() != null) {
             group.getText();
-        }
+        }*/
     }
 }
